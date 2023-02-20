@@ -15,29 +15,53 @@
     <title>Preppedforyou</title>
 </head>
 <body>
-    <div class="jumbotron jumbotron-fluid justify-content-center">
-        <img src="images/truckvector.png" alt="" width="400px" height="auto" id="truck">
-        <div class="container-fluid">
-            <img src="images/logo.png" alt="" class="logo" id="logo">
-        </div>
-        <nav class="navbar navbar-expand-sm navbar-dark">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse text-center" id="collapsibleNavbar">
-              <ul class="navbar-nav">
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Home</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">About</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Order</a>
-                </li>       
-              </ul>
-            </div>  
-          </nav>
-    </div>
+  <div class="col-sm-12 d-none d-sm-block justify-content-center">
+    <video autoplay muted loop id="myVideo">
+    <source src="images/preppedforyou2.mp4" type="video/mp4">
+    Your browser does not support HTML5 video.
+    </video>
+
+</div>
+<div class="col-sm-12 d-xs-block d-sm-none">
+    <video autoplay muted loop id="myVideoMobile">
+    <source src="images/preppedforyou2.mp4" type="video/mp4">
+    Your browser does not support HTML5 video.
+    </video>
+
+</div>  
+
+<div class="content justify-content-center text-center">
+    <button class="button d-none d-sm-inline-block" id="myBtn" onclick="myFunction()">Pause</button>
+    <button class="button d-xs-block d-sm-none" id="myBtnMobile" onclick="myFunctionMobile()">Pause</button>
+    <a href="#"><button class="button">Order</button></a>
+    <a href="#"><button class="button">About</button></a>
+
+  </div>
+
+<script>
+var video = document.getElementById("myVideo");
+var mobile = document.getElementById("myVideoMobile");
+var btn = document.getElementById("myBtn");
+var btnMobile = document.getElementById("myBtnMobile")
+
+function myFunction() {
+if (video.paused) {
+    video.play();
+    btn.innerHTML = "Pause";
+} else {
+    video.pause();
+    btn.innerHTML = "Play";
+}
+}
+function myFunctionMobile() {
+if (mobile.paused) {
+    mobile.play();
+    btnMobile.innerHTML = "Pause";
+} else {
+    mobile.pause();
+    btnMobile.innerHTML = "Play";
+}
+}
+</script>
 </body>
 </html>
